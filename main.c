@@ -1,21 +1,28 @@
 #include <stdio.h>
+#include <stdlib.h>
 #define SIZE 5
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(int argc, char *argv[]) {
-	int i, average;
-	int sum;
-	int grade[SIZE];
+	int i;
+    int a[SIZE] = {1,2,3,4,5};
+    int b[SIZE] = {1,2,3,4,5};
+    int flag;
     
-    sum = 0;
-    for(i=0;i<SIZE;i++)
+    for (i=0;i<5;i++)
     {
-    	printf("학생 성적을 입력하세요 : ");
-    	scanf("%d", &grade[i]);
-		sum += grade[i]; 
+    	if (a[i] != b[i])
+    	{
+    		flag = 1;
+    		printf("a is not the same with b. \n");
+    		break;
+		}
 	}
-	average = sum / SIZE;
-	printf("성적 평균 : %d\n", average);
+    
+    if (flag == 0)
+     printf("a is the same with b. \n");
+     
+	  
 	return 0;
 }
 
